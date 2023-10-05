@@ -1,0 +1,1 @@
+import { default as Kota} from './kota.js'; 
