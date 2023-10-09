@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import outlatesRouter from './routes/outlates.js';
 import productRouter from './routes/products.js';
+import ordersRouter from './routes/orders.js';
 import notesRouter from './routes/notes.js';
 import sequelize from './config/sequelize.js';
 import { startSequelize } from './utils/startSequelize.js';
@@ -31,6 +32,7 @@ app.use(bodyParser.json());
 app.use('/outlates', outlatesRouter);
 app.use('/products', productRouter);
 app.use('/notes', notesRouter);
+app.use('/orders', ordersRouter);
 
 app.use((error, request, response, next) =>{
   response.status(500).json({
