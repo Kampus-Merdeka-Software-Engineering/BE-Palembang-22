@@ -3,7 +3,7 @@ import { getProducts, postProducts } from "../controllers/products.js";
 
 const productRouter = Router();
 
-productRouter.get('/', getProducts);
+productRouter.get('/:asal/:tujuan', getProducts);
 
 productRouter.post('/', postProducts);
 

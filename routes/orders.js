@@ -5,7 +5,7 @@ import { getOrders, postOrders } from "../controllers/orders.js";
 
 const ordersRouter = Router();
 
-ordersRouter.get('/', getOrders);
+ordersRouter.get('/:resi', getOrders);
 
 ordersRouter.post('/', postOrders);
 

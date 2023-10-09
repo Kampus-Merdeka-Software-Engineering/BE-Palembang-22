@@ -16,7 +16,7 @@ const Orders = sequelize.define("Orders",{
   lebar: DataTypes.INTEGER,
   tinggi: DataTypes.INTEGER,
   harga_kirim: DataTypes.INTEGER,
-  estimasi: DataTypes.DATEONLY,
+  estimasi: DataTypes.STRING,
   status: DataTypes.STRING
 
 });
