@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import outlatesRouter from './routes/outlates.js';
 import productRouter from './routes/products.js';
@@ -15,6 +16,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+
 startSequelize();
 
 // Mendefinisikan Sebuah models
@@ -25,6 +27,7 @@ sequelize.sync({ alter: true });
 console.log("Models:", sequelize.models)
 
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.raw());
 app.use(bodyParser.json());
