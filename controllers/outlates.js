@@ -4,19 +4,15 @@ import Outlates from "../models/outlates.js";
 
 export const getOutlates = async (request, response) =>{
   const listOutlates = await sequelize.models.Outlates.findAll();
-  response.json({
-    data: listOutlates,
-    message: 'Outlates telah didapatkan'
-  });
+  response.json(listOutlates);
 }
-
 export const postOutlates =  (request, response) =>{
-  const {kota, alamat, no_telp} = request.body;
+  const {kota, alamat, telp} = request.body;
 
   sequelize.models.Outlates.create({
     kota,
     alamat,
-    no_telp
+    telp
   });
   response.json({
     message: "Data Created succeccfully" 
