@@ -5,16 +5,13 @@ import Products from "../models/products.js";
 export const getProducts = async (request, response) =>{
   const Asal = request.params.asal;
   const Tujuan = request.params.tujuan;
-  const listProducts = await sequelize.models.Products.findOne({
+  const listProducts = await sequelize.models.Products.findAll({
     where: {
       asal: Asal,
       tujuan: Tujuan
     }
   });
-  response.json({
-    data: listProducts,
-    message: 'Product telah didapatkan'
-  });
+  response.json(listProducts)
 }
 
 
