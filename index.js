@@ -15,6 +15,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+app.use(cors());
 
 
 startSequelize();
@@ -27,7 +28,6 @@ sequelize.sync({ alter: true });
 console.log("Models:", sequelize.models)
 
 
-app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.raw());
 app.use(bodyParser.json());
